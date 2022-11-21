@@ -1,0 +1,9 @@
+---
+- name: Create ping exporter config
+  become: true
+  ansible.builtin.template:
+    src: 'templates/ping_exporter_config.yml'
+    dest: "{{ ping_exporter__user_home }}/ping_exporter_config.yml"
+    mode: 0640
+    owner: "{{ ping_exporter__user }}"
+    group: "{{ ping_exporter__group }}"

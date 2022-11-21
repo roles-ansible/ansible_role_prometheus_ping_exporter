@@ -8,5 +8,9 @@ ping_exporter__shell: '/bin/false'
 # Version
 ping_exporter__version: 'latest'
 
+# config
+ping_exporter__targets: []
+ping_exporter__nameserver: '9.9.9.9'
+
 # should we do a version check? (recomended)
 submodules_versioncheck: false

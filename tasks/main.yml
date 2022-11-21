@@ -8,3 +8,9 @@
 
 - name: Get latest release and define version
   ansible.builtin.include_tasks: set_version.yml
+
+- name: Install ping exporter
+  ansible.builtin.include_tasks: install.yml
+
+- name: Configurel ping exporter
+  ansible.builtin.include_tasks: config.yml

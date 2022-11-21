@@ -1,0 +1,18 @@
+---
+- name: Update apt cache
+  become: true
+  ansible.builtin.apt:
+    cache_valid_time: 3600
+    update_cache: true
+  when:
+    - ansible_pkg_mgr == "apt"
+
+- name: Install ping_exporter binary
+  become: true
+  ansible.builtin.apt:
+    # yamllint disable-line rule:line-length
+    deb: "https://github.com/czerwonk/ping_exporter/releases/download/{{ ping_exporter_version_target }}/ping_exporter_{{ ping_exporter_version_target }}_linux_amd64.deb"
+  when:
+    - ansible_pkg_mgr == "apt"
+
+# TODO: Multi OS support and verify download
