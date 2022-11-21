@@ -1,4 +1,7 @@
 ---
 - name: Run optional versionscheck
   ansible.builtin.include_tasks: versioncheck.yml
-  when: submodules_versioncheck|bool
+  when: submodules_versioncheck | bool
+
+- name: Create User for ping exporter
+  ansible.builtin.include_tasks: create_user.yml

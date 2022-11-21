@@ -1,2 +1,3 @@
-# ansible_role_template
-Template for Ansible roles
+# Ansible role prometheus ping exporter
+Install https://github.com/czerwonk/ping_exporter/releases
+

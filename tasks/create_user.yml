@@ -1,0 +1,23 @@
+---
+- name: "Create Ping Exporter Group"
+  become: true
+  ansible.builtin.group:
+    name: "{{ ping_exporter__group }}"
+    system: true
+    state: "present"
+  notify:
+    - "Systemctl restart ping_exporter.service"
+
+- name: "Create Ping Exporter User"
+  become: true
+  ansible.builtin.user:
+    name: "{{ ping_exporter__user }}"
+    comment: "Ping Exporter User"
+    group: "{{ ping_exporter__group }}"
+    groups: "{{ ping_exporter__groups | default(omit) }}"
+    home: "{{ ping_exporter__user_home }}"
+    shell: "{{ ping_exporter__shell }}"
+    system: true
+  register: _user
+  notify:
+    - "Systemctl restart ping_exporter.service"

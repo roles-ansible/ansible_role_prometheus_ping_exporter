@@ -1,3 +1,10 @@
 ---
+# Unix vars
+ping_exporter__user: 'ping_exporter'
+ping_exporter__grpup: 'ping_exporter'
+ping_exporter__user_home: '/var/lib/ping_exporter'
+ping_exporter__shell: '/bin/false'
+
+
 # should we do a version check? (recomended)
 submodules_versioncheck: false
