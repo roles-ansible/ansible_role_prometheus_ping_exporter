@@ -1,0 +1,11 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=Execute the ping_exporter server.
+
+[Service]
+WorkingDirectory={{ ping_exporter__user_home }}
+ExecStart=/usr/bin/ping_exporter --config.path {{ ping_exporter__user_home }}/ping_exporter_config.yml
+
+[Install]
+WantedBy=multi-user.target

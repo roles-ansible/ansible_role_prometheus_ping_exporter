@@ -2,11 +2,11 @@
 #
 # {{ ansible_managed }}
 #
-targets: {{ping_exporter__targets}}
+targets: {{ ping_exporter__targets }}
 
 dns:
   refresh: 2m15s
-  nameserver: {{ping_exporter__nameserver}}
+  nameserver: {{ ping_exporter__nameserver }}
 
 ping:
   interval: 2s
