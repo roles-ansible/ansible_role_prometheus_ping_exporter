@@ -1,0 +1,4 @@
+---
+- name: Systemctl restart ping_exporter.service
+  ansible.builtin.debug:
+    msg: "in progress..."

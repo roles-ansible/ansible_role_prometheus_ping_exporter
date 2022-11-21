@@ -5,3 +5,6 @@
 
 - name: Create User for ping exporter
   ansible.builtin.include_tasks: create_user.yml
+
+- name: Get latest release and define version
+  ansible.builtin.include_tasks: set_version.yml

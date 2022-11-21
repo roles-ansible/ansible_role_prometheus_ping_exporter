@@ -1,0 +1,38 @@
+---
+- name: "Determine 'latest' version release"
+  when: ping_exporter__version == "latest"
+  block:
+    - name: "Get latest ping_exporter release metadata"
+      ansible.builtin.uri:
+        url: "{{ ping_exporter__repo_api }}"
+        return_content: true
+      register: ping_exporter_remote_metadata
+      when: not ansible_check_mode
+
+    - name: "Fail if running in check mode without versions set."
+      ansible.builtin.fail:
+        msg: |
+          "You are running this playbook in check mode:
+          Please set the Ping Exporter version with the variable 'ping_exporter__version', because the
+          URI module cannot detect the latest version in this mode."
+      when: ansible_check_mode and (ping_exporter__version == 'latest' or ping_exporter__version == 'present')
+
+    - name: "Set fact latest ping_exporter release"
+      ansible.builtin.set_fact:
+        ping_exporter_remote_version: "{{ ping_exporter_remote_metadata.json.tag_name }}"
+      when: not ansible_check_mode
+
+    - name: "Set ping_exporter version target (latest)"
+      ansible.builtin.set_fact:
+        ping_exporter_version_target: "{{ ping_exporter_remote_version }}"
+      when: not ansible_check_mode
+
+- name: "Set ping_exporter version target {{ ping_exporter__version }}"
+  ansible.builtin.set_fact:
+    ping_exporter_version_target: "{{ ping_exporter__version }}"
+  when: ping_exporter__version != "latest"
+
+- name: Print Ping Exporter Version
+  ansible.builtin.debug:
+    verbosity: 1
+    msg: "Set Ping Exporter Version to {{ ping_exporter_version_target }}"

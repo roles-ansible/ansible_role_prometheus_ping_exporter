@@ -1,10 +1,12 @@
 ---
 # Unix vars
 ping_exporter__user: 'ping_exporter'
-ping_exporter__grpup: 'ping_exporter'
+ping_exporter__group: 'ping_exporter'
 ping_exporter__user_home: '/var/lib/ping_exporter'
 ping_exporter__shell: '/bin/false'
 
+# Version
+ping_exporter__version: 'latest'
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false
