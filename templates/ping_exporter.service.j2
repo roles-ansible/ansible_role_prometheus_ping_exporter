@@ -1,11 +1,15 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 
 [Unit]
 Description=Execute the ping_exporter server.
 
 [Service]
+Type=simple
 WorkingDirectory={{ ping_exporter__user_home }}
+User={{ ping_exporter__user }}
+Group={{ ping_exporter__group }}
 ExecStart=/usr/bin/ping_exporter --config.path {{ ping_exporter__user_home }}/ping_exporter_config.yml
+AmbientCapabilities=CAP_NET_RAW
 
 [Install]
 WantedBy=multi-user.target

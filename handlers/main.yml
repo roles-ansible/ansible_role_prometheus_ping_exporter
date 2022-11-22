@@ -1,4 +1,6 @@
 ---
 - name: Systemctl restart ping_exporter.service
-  ansible.builtin.debug:
-    msg: "in progress..."
+  become: true
+  ansible.builtin.systemd:
+    name: 'ping_exporter.service'
+    state: 'restarted'
