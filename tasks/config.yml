@@ -7,3 +7,5 @@
     mode: 0640
     owner: "{{ ping_exporter__user }}"
     group: "{{ ping_exporter__group }}"
+  notify:
+    - "Systemctl restart ping_exporter.service"
