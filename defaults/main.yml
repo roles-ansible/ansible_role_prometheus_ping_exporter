@@ -11,6 +11,7 @@ ping_exporter__version: 'latest'
 # config
 ping_exporter__targets: []
 ping_exporter__nameserver: '9.9.9.9'
+ping_exporter__web_listen_address: ":9427"
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false

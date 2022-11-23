@@ -8,7 +8,7 @@ Type=simple
 WorkingDirectory={{ ping_exporter__user_home }}
 User={{ ping_exporter__user }}
 Group={{ ping_exporter__group }}
-ExecStart=/usr/bin/ping_exporter --config.path {{ ping_exporter__user_home }}/ping_exporter_config.yml
+ExecStart=/usr/bin/ping_exporter --config.path {{ ping_exporter__user_home }}/ping_exporter_config.yml --web.listen-address="{{ ping_exporter__web_listen_address }}"
 CapabilityBoundingSet=CAP_NET_RAW
 AmbientCapabilities=CAP_NET_RAW
 
