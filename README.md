@@ -1,5 +1,5 @@
 [![License](https://raw.githubusercontent.com/roles-ansible/ansible_role_prometheus_ping_exporter/main/.github/license.svg)](https://github.com/roles-ansible/ansible_role_prometheus_ping_exporter/blob/main/LICENSE)
-{![Galaxy](https://github.com/roles-ansible/ansible_role_prometheus_ping_exporter/raw/main/.github/galaxy.svg)](https://galaxy.github.com/do1jlr/prometheus_ping_exporter)
+[![Galaxy](https://github.com/roles-ansible/ansible_role_prometheus_ping_exporter/raw/main/.github/galaxy.svg)](https://galaxy.github.com/do1jlr/prometheus_ping_exporter)
 
 # Ansible role prometheus ping exporter
 Ansible role to install the prometheus node exporter from [github.com/czerwonk/ping_exporte](https://github.com/czerwonk/ping_exporter.git)
