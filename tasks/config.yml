@@ -1,4 +1,9 @@
 ---
+- name: Make sure targets exist
+  ansible.builtin.fail:
+    msg: "Pleas define a target with the ping_exporter__targets array"
+  when: ping_exporter__targets | length == 0
+
 - name: Create ping exporter config
   become: true
   ansible.builtin.template:
