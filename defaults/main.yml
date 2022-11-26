@@ -5,6 +5,8 @@ ping_exporter__group: 'ping_exporter'
 ping_exporter__user_home: '/var/lib/ping_exporter'
 ping_exporter__shell: '/bin/false'
 
+ping_exporter__filename: "ping_exporter_{{ ping_exporter_version_target }}_linux_{{ ping_arch }}.deb"
+
 # Version
 ping_exporter__version: 'latest'
 
