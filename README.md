@@ -15,6 +15,7 @@ Ansible role to install the prometheus node exporter from [github.com/czerwonk/p
 | **ping_exporter__targets** | `` []`` |
 | ping_exporter__nameserver | ``9.9.9.9`` |
 | ping_exporter__web_listen_address | ``:9427`` |
+| ping_exporter__filename | *see defaults/main.yml* |
 | submodules_versioncheck | ``false`` |
 
 Please define all your targets in the ``ping_exporter__targets`` array.
