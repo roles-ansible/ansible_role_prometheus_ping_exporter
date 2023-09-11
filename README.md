@@ -31,7 +31,7 @@ Please define all your targets in the ``ping_exporter__targets`` array.
 - name: Install ping exporter at example.com
   hosts: example.com
   roles:
-    - {role: do1jlr.prometheus_ping_exporter, tags: etebase}
+    - {role: l3d.prometheus_ping_exporter, tags: etebase}
   vars:
     ping_exporter__targets:
       - host1.example.com
