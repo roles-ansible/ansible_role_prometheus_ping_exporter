@@ -14,6 +14,18 @@ ping_exporter__version: 'latest'
 ping_exporter__targets: []
 ping_exporter__nameserver: '9.9.9.9'
 ping_exporter__web_listen_address: ":9427"
+ping_exporter__dns:
+  refresh: "2m15s"
+  nameserver: "{{ ping_exporter__nameserver }}"
+
+ping_exporter__ping:
+  interval: "2s"
+  timeout: "3s"
+  history-size: 42
+  size: 120
+
+ping_exporter__options:
+  disableIPv6: false
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false

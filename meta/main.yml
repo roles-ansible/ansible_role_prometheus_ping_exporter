@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: prometheus_ping_exporter
-  author: do1jlr
+  author: l3d
   description: Ansible role to install a prometheus ping exporter
   license: "MIT"
   min_ansible_version: "2.13"
