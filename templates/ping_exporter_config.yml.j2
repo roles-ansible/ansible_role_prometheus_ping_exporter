@@ -1,18 +1,10 @@
 ---
-#
-# {{ ansible_managed }}
-#
-targets: {{ ping_exporter__targets }}
+{{ ansible_managed | comment }}
 
-dns:
-  refresh: 2m15s
-  nameserver: {{ ping_exporter__nameserver }}
+targets: {{ ping_exporter__targets | ansible.builtin.to_yaml(encoding='utf-8') }}
 
-ping:
-  interval: 2s
-  timeout: 3s
-  history-size: 42
-  payload-size: 120
+dns: {{ ping_exporter__dns | ansible.builtin.to_yaml(encoding='utf-8') }}
 
-options:
-  disableIPv6: false
+ping: {{ ping_exporter__ping | ansible.builtin.to_yaml(encoding='utf-8') }}
+
+options: {{ ping_exporter__options | ansible.builtin.to_yaml(encoding='utf-8') }}

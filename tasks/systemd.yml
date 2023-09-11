@@ -16,3 +16,10 @@
     daemon_reload: true
   notify:
     - "Systemctl restart ping_exporter.service"
+
+- name: Enable ping_exporter.service Service and make sure it started
+  become: true
+  ansible.builtin.systemd:
+    enabled: true
+    name: 'ping_exporter.service'
+    state: 'started'
